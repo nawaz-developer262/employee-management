@@ -15,19 +15,33 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'pwd'
-                sh 'ls -la'
                 sh 'mvn clean package'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t employee-app .'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                docker stop employee-app || true
+                docker rm employee-app || true
+                docker run -d --name employee-app -p 8081:8080 employee-app
+                '''
             }
         }
     }
 
     post {
         success {
-            echo 'Build Successful'
+            echo 'Deployment Successful!'
         }
         failure {
-            echo 'Build Failed'
+            echo 'Deployment Failed!'
         }
     }
 }
