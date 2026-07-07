@@ -11,7 +11,7 @@ public class MessageController {
     public String getMessage() {
         return "Hi there!";
     }
-    @GetMapping("/message2")
+    @GetMapping("/message1")
     public String getMessage2() {
         return "Hello there!";
     }
