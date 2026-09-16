@@ -1,4 +1,4 @@
-package com.example.demo_2.comtroller;
+package com.example.demo_2.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,5 +14,9 @@ public class MessageController {
     @GetMapping("/message1")
     public String getMessage2() {
         return "Hello there!";
+    }
+    @GetMapping("/hello")
+    public String getHello() {
+        return "Hello World";
     }
 }
