@@ -9,4 +9,8 @@ public class EmployeeController {
     public String getEmployee() {
         return "Employee details";
     }
+    @GetMapping("/count")
+    public long getCount() {
+        return 100;
+    }
 }
