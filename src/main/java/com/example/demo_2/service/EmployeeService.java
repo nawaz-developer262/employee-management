@@ -11,6 +11,7 @@ public class EmployeeService {
         employee.setId(1L);
         employee.setName("John Doe");
         employee.setSalary(50000L);
+        employee.setEmail("john@test.com");
         return employee;
     }
 }
