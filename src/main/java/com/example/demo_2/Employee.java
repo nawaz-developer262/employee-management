@@ -4,6 +4,7 @@ public class Employee {
     Long id;
     String name;
     Long salary;
+<<<<<<< HEAD
     String email;
 
     public String getEmail() {
@@ -13,6 +14,8 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
+=======
+>>>>>>> origin/main
 
     public Long getId() {
         return id;
